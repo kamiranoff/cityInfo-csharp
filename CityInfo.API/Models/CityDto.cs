@@ -18,5 +18,7 @@ namespace CityInfo.API.Models
 
         public int NumberOfPointsOfInterest { get; set; }
 
+        public ICollection<PointsOfInterestDto> PointsOfInterest { get; set; }
+
     }
 }
