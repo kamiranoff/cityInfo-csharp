@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Newtonsoft.Json.Serialization;
 
 namespace CityInfo.API
@@ -18,7 +19,9 @@ namespace CityInfo.API
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddMvc();
+            services.AddMvc(o => o.OutputFormatters.Add(
+                new XmlDataContractSerializerOutputFormatter()
+            ));
 
             // Allow to Manipulate JsonSerializer
             // The castedResoler.NamingStrategy = null; allows us to use The properties set in our Classes
