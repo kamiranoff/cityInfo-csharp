@@ -18,13 +18,16 @@ namespace CityInfo.API
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddMvc()
-                    .AddJsonOptions(o => {
-                if(o.SerializerSettings.ContractResolver != null) {
-                            var castedResoler = o.SerializerSettings.ContractResolver as DefaultContractResolver;
-                            castedResoler.NamingStrategy = null;
-                }
-            });
+            services.AddMvc();
+
+            // Allow to Manipulate JsonSerializer
+            // The castedResoler.NamingStrategy = null; allows us to use The properties set in our Classes
+                //    .AddJsonOptions(o => {
+                //if(o.SerializerSettings.ContractResolver != null) {
+                //            var castedResoler = o.SerializerSettings.ContractResolver as DefaultContractResolver;
+                //            castedResoler.NamingStrategy = null;
+                //}
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
