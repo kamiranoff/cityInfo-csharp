@@ -16,9 +16,13 @@ namespace CityInfo.API.Models
 
         public String Description { get; set; }
 
-        public int NumberOfPointsOfInterest { get; set; }
+        // Initialize to an empty list to avoid null pointers
+        public ICollection<PointsOfInterestDto> PointsOfInterest { get; set; } = new List<PointsOfInterestDto>();
 
-        public ICollection<PointsOfInterestDto> PointsOfInterest { get; set; }
+        public int NumberOfPointsOfInterest { get {
+                return PointsOfInterest.Count;
+            } 
+        }
 
     }
 }

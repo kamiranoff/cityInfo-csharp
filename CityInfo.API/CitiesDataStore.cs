@@ -18,6 +18,18 @@ namespace CityInfo.API
                     Id = 1,
                     Name="New york City",
                     Description="Big Apple",
+                    PointsOfInterest= new List<PointsOfInterestDto>() {
+                        new PointsOfInterestDto() {
+                            Id=1,
+                            Name="Central Park",
+                            Description="The most visited park"
+                        },
+                        new PointsOfInterestDto() {
+                            Id=2,
+                            Name="Empire State building",
+                            Description="A 102-story skyscraper"
+                        }
+                    }
 
                 },
                 new CityDto() {
